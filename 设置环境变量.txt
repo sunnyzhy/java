@@ -1,0 +1,27 @@
+1.新建系统变量
+
+"变量名"：Java_Home
+
+"变量值"：D:\Program Files\Java\jdk1.8.0_45
+
+注："变量值"就是安装jdk的路径
+
+
+
+2.编辑系统变量Path
+
+在"变量值"最后面添加;%JAVA_HOME%\bin;%Java_Home%\jre\bin;
+
+
+
+3.新建系统变量
+
+"变量名"：ClassPath
+
+"变量值"：;%Java_Home%\bin;%Java_Home%\lib\dt.jar;%Java_Home%\lib\tools.jar
+
+
+
+4.测试是否安装成功
+
+打开cmd，输入java、javac、java -version

@@ -1,0 +1,66 @@
+安装与配置：
+1.安装JavaEE
+
+在eclipse官网下载下载Eclipse IDE for Java EE Developers
+
+
+
+2.安装Tomcat
+
+在tomcat官网下载 tomcat 7.0，安装完成之后，启动tomcat的windows服务，在浏览器中输入 http://localhost:8080
+
+
+
+3.安装TomcatPlugin
+
+在eclipsetotale官网下载tomcatPluginV33，解压缩后将com.sysdeo.eclipse.tomcat_3.3.0文件夹复制到eclipse目录的plugins目录下
+
+
+
+4.重新启动eclipse后，会在工具栏看到3个tomcat图标，菜单栏也多了一个tomcat菜单
+
+
+
+5.配置eclipse中tomcat的参数
+
+打开Window -> Preferences -> Tomcat，在右侧中，选择Tomcat version为Version 7.x，设置Tomcat home为安装tomcat的根目录，其它设置默认
+
+
+
+新建web项目：
+1.新建项目helloworld
+
+打开File -> New -> Dynamic Web Project，命名为web；在WebContent文件夹上右键新建JSP File，命名为helloworld，在body中间加入Hello World!
+
+
+
+2.运行Run As -> Run on Server，此时Eclipse将在Project Explorer下自动生成Servers工程
+
+
+
+注意：eclipse创建web项目时，提示错误：Dynamic Web Module 3.0 requires Java 1.6 or newer
+
+解决办法：
+
+这是因为当前的编译器java版本太低，请打开eclipse的preferences->java->compiler选择右边的Compiler compliance level为1.6以上版本。
+
+
+
+发布项目到Tomcat：
+1.打开Window -> Show View -> Servers视图，Remove刚刚发布的web项目，否则Server Locations下的三个单选按钮为灰色不可用状态
+
+
+
+2.在Servers视图下右键打开Tomcat服务器配置项，修改Server Locations选项为Use Tomcat installation，设置Deploy path为webapps；修改Publishing选项为Never publish automatically，保存退出
+
+
+
+3.在Eclipse的菜单栏或工具栏中点击Stop Tomcat停止调试用的Tomcat服务
+
+
+
+4.运行Run As -> Run on Server，此时在Tomcat安装目录下的webapps目录中会出现web文件夹
+
+
+
+5.在浏览器的地址栏里输入http://localhost:8080/web/helloworld.jsp，如果出现Hello World!，则说明成功
