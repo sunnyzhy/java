@@ -52,7 +52,7 @@
 
 
 
-2.在Servers视图下右键打开Tomcat服务器配置项，修改Server Locations选项为Use Tomcat installation，设置Deploy path为webapps；修改Publishing选项为Never publish automatically，保存退出
+2.在Servers视图下右键open打开Tomcat服务器配置项，修改Server Locations选项为Use Tomcat installation，设置Deploy path为webapps；修改Publishing选项为Never publish automatically，保存退出
 
 
 
