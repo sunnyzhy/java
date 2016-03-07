@@ -8,7 +8,7 @@
 2.安装Tomcat
 
 在tomcat官网下载 tomcat 7.0，安装完成之后，启动tomcat的windows服务，在浏览器中输入 http://localhost:8080
-如果Apache Tomcat服务启动失败，就在任务管理器里结束javaw.exe进程
+如果Apache Tomcat服务启动失败，通常是由于Tomcat的服务端口和JavaEE的调试端口冲突造成的，此时只需在任务管理器里结束javaw.exe进程即可
 
 
 
