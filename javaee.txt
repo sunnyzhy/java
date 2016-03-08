@@ -1,30 +1,31 @@
 安装与配置：
 1.安装JavaEE
 
-在eclipse官网下载下载Eclipse IDE for Java EE Developers
+在http://www.eclipse.org/downloads/下载Eclipse IDE for Java EE Developers，一般为最新版，即mars
+注：较早版的，如helios，会出现一些插件安装不上的情况
 
 
 
 2.安装Tomcat
 
-在tomcat官网下载 tomcat 7.0，安装完成之后，启动tomcat的windows服务，在浏览器中输入 http://localhost:8080
+在http://tomcat.apache.org/下载tomcat，安装完成之后，启动tomcat的windows服务，在浏览器中输入 http://localhost:8080
 如果Apache Tomcat服务启动失败，通常是由于Tomcat的服务端口和JavaEE的调试端口冲突造成的，此时只需在任务管理器里结束javaw.exe进程即可
 
 
 
 3.安装TomcatPlugin
 
-在eclipsetotale官网下载tomcatPluginV33，解压缩后将com.sysdeo.eclipse.tomcat_3.3.0文件夹复制到eclipse目录的plugins目录下
+在http://www.eclipsetotale.com/tomcatPlugin.html下载tomcatPluginV33，解压缩后将com.sysdeo.eclipse.tomcat_3.3.0文件夹复制到eclipse目录的plugins目录下
 
-
-
-4.重新启动eclipse后，会在工具栏看到3个tomcat图标，菜单栏也多了一个tomcat菜单
-
-
-
-5.配置eclipse中tomcat的参数
+重新启动eclipse后，会在工具栏看到3个tomcat图标，菜单栏也多了一个tomcat菜单
 
 打开Window -> Preferences -> Tomcat，在右侧中，选择Tomcat version为Version 7.x，设置Tomcat home为安装tomcat的根目录，其它设置默认
+注：如果是mars版，则忽略此步骤
+
+
+4.安装Spring IDE
+
+打开Help -> Eclipse Marketplace -> 在Search里输入spring ide，在列表里选Spring IDE xxx，点Install，后续操作略，安装完成重启后，会在Welcome界面出现Spring IDE图标
 
 
 
@@ -52,7 +53,7 @@
 
 
 
-2.在Servers视图下右键open打开Tomcat服务器配置项，修改Server Locations选项为Use Tomcat installation，设置Deploy path为webapps；修改Publishing选项为Never publish automatically，保存退出
+2.在Servers视图下右键open或者双击Tomcat Server打开Tomcat服务器配置项，修改Server Locations选项为Use Tomcat installation，设置Deploy path为webapps；修改Publishing选项为Never publish automatically，保存退出
 
 
 
