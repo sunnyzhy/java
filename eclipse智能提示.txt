@@ -1,0 +1,9 @@
+1. 打开智能提示功能
+
+打开Window -> preferences -> Java -> Editor -> Content assist，找到右边的Auto-Activation项，勾选Enable auto activation：
+
+  Auto activation delay ---提示延迟时间，默认是0毫秒
+
+  Auto activation triggers for Java ---提示触发，默认是"."，在点号后面输入26个大小写字母，即：".abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+点击Apply ->OK 
