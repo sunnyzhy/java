@@ -13,3 +13,5 @@
 打开Window -> Preferences -> General -> Appearance -> Colors and Fonts -> Basic -> Text Font -> Edit
 
 设置完成之后，点击Apply -> OK 
+
+3. alt + /
