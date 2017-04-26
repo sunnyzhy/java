@@ -1,0 +1,14 @@
+1.java项目上会出现红叉叉的图标
+解决方法：
+1).右键点击项目 -> Properties -> JavaBuildPath -> Libraries -> JRE SystemLibrary -> 点击 Edit 按钮
+2).选择 Alternate JRE -> 点击 InstalledJREs 按钮
+3).点击 Add 按钮 -> 选择Standard VM -> 点击 Next 按钮
+4).在 JRE home 中设置 jdk 目录(注意，不是 jre 目录) -> 点击 Finish 按钮 
+5).勾选刚才设置的 jdk 选项 -> 点击 OK 按钮
+6).完成
+
+2.发布项目的时候，Tomcat WEB-INF lib目录为空的情况
+解决方法：
+1).右键点击项目 -> Properties -> 选择 Deployment Assembly 选项 -> 点击 Add 按钮
+2).选择Java Build Path Entries -> 点击 Next 按钮 -> 选择列表里的jar包 -> 点击 Finish 按钮 -> 点击 Apply 按钮 -> 点击 OK 按钮
+3).重新编译项目即可
