@@ -22,4 +22,5 @@ http://download.aptana.com/studio3/plugin/install
 在Eclipse中，打开 Window -> Preferences -> General -> Editors -> File Associations -> *.js -> 在 Associated editors 中选择 JavaScript Source Editor -> Default -> OK
 
 7.编辑js文件
-右键点击 js 文件，Open With -> JavaScript Source Editor，在编辑的过程中，即可看到 JavaScript 代码的智能提示
+1).未配置Aptana为默认的js编辑器时，右键点击js文件，Open With -> JavaScript Source Editor，在编辑的过程中，即可看到 JavaScript 代码的智能提示
+2).配置了Aptana为默认的js编辑器时，双击打开js文件，在编辑的过程中，即可看到 JavaScript 代码的智能提示
