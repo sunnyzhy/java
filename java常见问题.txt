@@ -12,3 +12,17 @@
 1).右键点击项目 -> Properties -> 选择 Deployment Assembly 选项 -> 点击 Add 按钮
 2).选择Java Build Path Entries -> 点击 Next 按钮 -> 选择列表里的jar包 -> 点击 Finish 按钮 -> 点击 Apply 按钮 -> 点击 OK 按钮
 3).重新编译项目即可
+
+3.JSONObject使用异常
+缺少commons-beanutils-1.8.0.jar
+java.lang.NoClassDefFoundError: org/apache/commons/beanutils/DynaBean 
+缺少commons-collections.jar
+java.lang.NoClassDefFoundError: org/apache/commons/collections/map/ListOrderedMap
+缺少commons-lang-2.4.jar 
+java.lang.NoClassDefFoundError: org/apache/commons/lang/exception/NestableRuntimeException
+缺少commons-logging-1.1.1.jar
+java.lang.NoClassDefFoundError: org/apache/commons/logging/LogFactory 
+缺少ezmorph-1.0.4.jar 
+java.lang.NoClassDefFoundError: net/sf/ezmorph/Morpher 
+缺少json-lib-2.3-jdk15.jar
+java.lang.NoClassDefFoundError: net/sf/json/JSONObject 
