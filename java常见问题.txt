@@ -41,3 +41,7 @@ https://mvnrepository.com
 第二步：mvn compiler:compile
 第三步：mvn org.apache.maven.plugins:maven-compiler-plugin:compile
 第四步：mvn org.apache.maven.plugins:maven-compiler-plugin:2.0.2:compile
+
+7.No goals have been specified for this build.
+解决方法：
+pom.xml文件<build>标签后面加上<defaultGoal>compile</defaultGoal>即可  
