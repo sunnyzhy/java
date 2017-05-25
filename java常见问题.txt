@@ -33,3 +33,11 @@ java.lang.NoClassDefFoundError: net/sf/json/JSONObject
 
 5.maven仓库
 https://mvnrepository.com 
+
+6.Unknown lifecycle phase "xxx". You must specify a valid lifecycle phase or a goal in the format ...
+解决方法：
+运行四个命令：
+第一步：mvn install
+第二步：mvn compiler:compile
+第三步：mvn org.apache.maven.plugins:maven-compiler-plugin:compile
+第四步：mvn org.apache.maven.plugins:maven-compiler-plugin:2.0.2:compile
