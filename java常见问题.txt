@@ -30,3 +30,6 @@ java.lang.NoClassDefFoundError: net/sf/json/JSONObject
 4.An internal error occurred during: "reload maven project". java.lang.NullPointerExceptio
 解决方法：
 找到workspace文件夹下的/.metadata文件夹, 在.metadata下搜索workbench.xmi文件，用记事本打开，ctrl+F搜索找到包含<tags>org.eclipse.e4.primaryDataStack</tags>的<sharedElements></sharedElements>,将其删除然后保存 ，重启eclipse。
+
+5.maven仓库
+https://mvnrepository.com 
