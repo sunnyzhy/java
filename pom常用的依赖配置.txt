@@ -61,3 +61,19 @@ websocket依赖：
   <artifactId>javaee-api</artifactId>
   <version>7.0</version>
 </dependency>
+
+spring-cloud-starter-eureka-server依赖：
+<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-eureka-server -->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-eureka-server</artifactId>
+    <version>1.2.7.RELEASE</version>
+</dependency>
+
+jersey-server依赖：
+<!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-server -->
+<dependency>
+    <groupId>com.sun.jersey</groupId>
+    <artifactId>jersey-server</artifactId>
+    <version>1.19.1</version>
+</dependency>
