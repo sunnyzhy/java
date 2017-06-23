@@ -74,3 +74,8 @@ Project Name -> 右键 -> Validate -> OK
     </plugins>
   </build>
 3).右键工程名称 -> Maven -> Update Project... -> OK
+
+11.No compiler is provided in this environment. Perhaps you are running on a JRE rather than a JDK? 
+解决方法：
+1).进入 Window -> Preferences -> Java -> Installed JREs -> Execution Environments -> JavaSE-1.8 -> 在右侧选择jdk
+2).右键工程名称 -> Maven -> Update Project... -> OK
