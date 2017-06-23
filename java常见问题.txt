@@ -79,3 +79,12 @@ Project Name -> 右键 -> Validate -> OK
 解决方法：
 1).进入 Window -> Preferences -> Java -> Installed JREs -> Execution Environments -> JavaSE-1.8 -> 在右侧选择jdk
 2).右键工程名称 -> Maven -> Update Project... -> OK
+
+12.Jersey No WebApplication provider is present
+重新下载jersey-server
+<!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-server -->
+<dependency>
+    <groupId>com.sun.jersey</groupId>
+    <artifactId>jersey-server</artifactId>
+    <version>1.19.1</version>
+</dependency>
