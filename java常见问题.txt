@@ -49,3 +49,6 @@ pom.xml文件<build>标签后面加上<defaultGoal>compile</defaultGoal>即可
 8.Maven 项目生成jar运行时提示"没有主清单属性"
 解决方法：
 没有找到入口类（即main函数所在的类），在pom.xml里面加上入口类的配置<mainClass>包名.类名</mainClass>即可
+
+9.Eclipse-CHKJ3000E: WAR Validation Failed
+Project Name -> 右键 -> Validate -> OK
