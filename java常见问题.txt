@@ -51,4 +51,26 @@ pom.xml文件<build>标签后面加上<defaultGoal>compile</defaultGoal>即可
 没有找到入口类（即main函数所在的类），在pom.xml里面加上入口类的配置<mainClass>包名.类名</mainClass>即可
 
 9.Eclipse-CHKJ3000E: WAR Validation Failed
+解决方法：
 Project Name -> 右键 -> Validate -> OK
+
+10.Cannot change version of project facet Dynamic web module to 3.1
+解决方法：
+1).切换到Navigator，打开工程项目的.settings/org.eclipse.wst.common.project.facet.core.xml，把jst.web对应的版本号改为3.1
+2).打开pom.xml，在build -> plugins节点下添加plugin子节点
+  <build>
+    <finalName>project name</finalName>
+    <plugins>
+    	<plugin>
+    			<groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version> <!-- jst.web对应的版本号 -->
+                <configuration>
+                    <source>1.8</source> <!-- jdk对应的版本号 -->
+                    <target>1.8</target> <!-- jdk对应的版本号 -->
+                    <encoding>UTF-8</encoding>
+                </configuration>
+         </plugin>
+    </plugins>
+  </build>
+3).右键工程名称 -> Maven -> Update Project... -> OK
