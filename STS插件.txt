@@ -1,0 +1,16 @@
+1.查看Eclipse版本
+启动Eclipse -> Help -> About Eclipse -> Version: Mars.2 Release (4.5.2)
+
+2.打开https://spring.io/tools/sts -> See All Versions -> 在Update Site Archives列表里找到版本号为4.5.2的ARCHIVE，下载
+
+3.安装STS插件
+Eclipse -> Help -> Install new Sofware... -> Add... -> Archive... -> 选择刚刚下载的zip文件 -> 选择带有IED标识的插件 -> 取消 Contact all update sites during install to find required software 的选项 -> Next ->开始安装
+
+4.查看是否安装成功
+Eclipse -> Windows -> Preferences -> 在左侧会看到Spring项
+
+5.创建Spring Boot项目
+File -> New -> Spring Starter Project -> Next -> 填写项目信息 -> Next -> 选择Template Engines里的Thymeleaf，选择Web里的Web，一般选择这两个就可以了了
+
+6.启动Spring Boot
+右键 项目名Application 中的main方法，Run As -> Java Application，项目就可以启动了
