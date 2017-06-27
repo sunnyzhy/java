@@ -1,0 +1,5 @@
+1.打开http://www.spket.com/download.html，在列表里找到File为Plugin的项，下载插件
+
+2.解压spket-1.6.23.zip，打开eclipse文件夹，把plugins和features两个文件夹下的文件分别复制到Eclipse安装包下的plugins和features文件夹中。 
+
+3.启动Eclipse，打开 Window -> Preferences -> Spket -> Javascript Profile -> New -> 输入Profile的Name -> OK -> Add Library -> 选择jQuery -> OK -> Add File -> 选择本地的jquery文件 -> OK
