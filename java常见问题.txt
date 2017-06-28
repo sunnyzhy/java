@@ -88,3 +88,9 @@ Project Name -> 右键 -> Validate -> OK
     <artifactId>jersey-server</artifactId>
     <version>1.19.1</version>
 </dependency>
+
+13. should trim empty <tag>
+<tag >
+</tag>
+Or adding a space:
+<tag > </tag>
