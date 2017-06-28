@@ -90,7 +90,7 @@ Project Name -> 右键 -> Validate -> OK
 </dependency>
 
 13. should trim empty <tag>
-<tag >
+<tag>
 </tag>
 Or adding a space:
-<tag > </tag>
+<tag> </tag>
