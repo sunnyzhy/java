@@ -14,6 +14,13 @@ json依赖：
     <artifactId>json</artifactId>
     <version>20170516</version>
 </dependency>
+<!--json-lib-->    
+<dependency>    
+    <groupId>net.sf.json-lib</groupId>    
+    <artifactId>json-lib</artifactId>    
+    <version>2.4</version>    
+    <classifier>jdk15</classifier>    
+</dependency>  
 
 spring依赖：
 <!-- 只需配置spring-webmvc即可，其相关的spring的其它jar包会自动添加依赖 -->
