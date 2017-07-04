@@ -1,27 +1,31 @@
-1.ÐÂ½¨ÏµÍ³±äÁ¿
+1.æ–°å»ºç³»ç»Ÿå˜é‡
 
-"±äÁ¿Ãû"£ºJava_Home
+"å˜é‡å"ï¼šJava_Home
 
-"±äÁ¿Öµ"£ºD:\Program Files\Java\jdk1.8.0_45
+"å˜é‡å€¼"ï¼šD:\Program Files\Java\jdk1.8.0_45
 
-×¢£º"±äÁ¿Öµ"¾ÍÊÇ°²×°jdkµÄÂ·¾¶
-
-
-
-2.±à¼­ÏµÍ³±äÁ¿Path
-
-ÔÚ"±äÁ¿Öµ"×îºóÃæÌí¼Ó;%JAVA_HOME%\bin;%Java_Home%\jre\bin;
+æ³¨ï¼š"å˜é‡å€¼"å°±æ˜¯å®‰è£…jdkçš„è·¯å¾„
 
 
 
-3.ÐÂ½¨ÏµÍ³±äÁ¿
+2.ç¼–è¾‘ç³»ç»Ÿå˜é‡Path
 
-"±äÁ¿Ãû"£ºClassPath
-
-"±äÁ¿Öµ"£º;%Java_Home%\bin;%Java_Home%\lib\dt.jar;%Java_Home%\lib\tools.jar
+åœ¨"å˜é‡å€¼"æœ€åŽé¢æ·»åŠ ;%JAVA_HOME%\bin;%Java_Home%\jre\bin;
 
 
 
-4.²âÊÔÊÇ·ñ°²×°³É¹¦
+3.æ–°å»ºç³»ç»Ÿå˜é‡
 
-´ò¿ªcmd£¬ÊäÈëjava¡¢javac¡¢java -version
+"å˜é‡å"ï¼šClassPath
+
+"å˜é‡å€¼"ï¼š;%Java_Home%\bin;%Java_Home%\lib\dt.jar;%Java_Home%\lib\tools.jar
+
+
+
+4.æµ‹è¯•æ˜¯å¦å®‰è£…æˆåŠŸ
+
+æ‰“å¼€cmdï¼Œè¾“å…¥javaã€javacã€java -version
+
+5.SCä¸æ˜¯å†…éƒ¨å‘½ä»¤æˆ–å¤–éƒ¨å‘½ä»¤
+çŽ¯å¢ƒå˜é‡ -> ç³»ç»Ÿå˜é‡ -> Path -> ç¼–è¾‘ -> æ·»åŠ ä»¥ä¸‹å†…å®¹
+;%SystemRoot%/system32;%SystemRoot%;%SystemRoot%/System32/Wbem
