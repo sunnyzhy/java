@@ -81,6 +81,7 @@ Project Name -> 右键 -> Validate -> OK
 2).右键工程名称 -> Maven -> Update Project... -> OK
 
 12.Jersey No WebApplication provider is present
+解决方法：
 重新下载jersey-server
 <!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-server -->
 <dependency>
@@ -90,7 +91,12 @@ Project Name -> 右键 -> Validate -> OK
 </dependency>
 
 13. should trim empty <tag>
+解决方法：tag标签之间要有空格或换行
 <tag>
 </tag>
 Or adding a space:
 <tag> </tag>
+
+14.Multiple Contexts have a path of 错误的解决办法
+解决方法：
+删掉Servers里的Tomcat vX.X Server，重新添加Server
