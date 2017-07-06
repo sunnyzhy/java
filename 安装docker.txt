@@ -1,0 +1,32 @@
+1.更新系统
+# yum -y update
+
+2.创建docker的yum仓库
+# cat > /etc/yum.repos.d/docker.repo << EOF
+[dockerrepo]
+name=Docker Repository
+#baseurl=https://yum.dockerproject.org/repo/main/centos/7 # centos7
+baseurl=https://yum.dockerproject.org/repo/main/centos/6 # centos6
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+EOF
+
+注意：
+如果安装过程中报错docker-engine-17.05.0.ce-1.el7.centos.x86_64 (dockerrepo)，则很有可能是baseurl设置错误，检查url里的版本号是否跟操作系统的版本号一致
+修改完成之后，清除yum缓存
+# yum clean all
+# yum makecache
+
+3.安装docker
+# yum install -y docker-engine
+# yum install -y docker-selinux
+
+4.启动docker
+# systemctl start docker.service
+
+5.验证docker已经正常安装
+# docker run hello-world
+
+6.配置docker开机自启动
+# systemctl enable docker.service
