@@ -20,13 +20,17 @@ EOF
 
 3.安装docker
 # yum install -y docker-engine
-# yum install -y docker-selinux
 
 4.启动docker
-# systemctl start docker.service
+# service docker start
+Starting docker:	                                   [  OK  ]
+
+# service docker stop
 
 5.验证docker已经正常安装
-# docker run hello-world
+# docker --version
+Docker version 1.7.1, build 786b29d
+
 
 6.配置docker开机自启动
 # systemctl enable docker.service
