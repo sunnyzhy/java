@@ -29,47 +29,44 @@ Dockerfile  jdk1.8.0_131  mythreejs-0.0.1-SNAPSHOT.jar
 
 4.编译并生成镜像 （. 表示当前路径）
 # docker build -t zhy/threejs .
-Sending build context to Docker daemon  335.8 MB
-Sending build context to Docker daemon 
-Step 0 : FROM centos
-latest: Pulling from centos
-f19a7b85bfcf: Pull complete 
-98eeaaddf5eb: Pull complete 
-72a210db1424: Pull complete 
-Digest: sha256:ddc45b5bc704ebe06a30eae3b50027d163243088d2478d50516ebede8c831b4f
+Sending build context to Docker daemon 406.4 MB
+Step 1/9 : FROM centos
+latest: Pulling from library/centos
+7b6bb4652a1b: Pull complete 
+Digest: sha256:c1010e2fe2b635822d99a096b1f4184becf5d1c98707cbccae00be663a9b9131
 Status: Downloaded newer image for centos:latest
- ---> 72a210db1424
-Step 1 : MAINTAINER zhy
- ---> Running in 193844b9a75f
- ---> e439d94b1afe
-Removing intermediate container 193844b9a75f
-Step 2 : COPY jdk1.7.0_80 jdk1.7.0_80
- ---> 026a9817a7c7
-Removing intermediate container 2172dc4eac9e
-Step 3 : ADD mythreejs-0.0.1-SNAPSHOT.jar app.jar
- ---> 6dddd6de7916
-Removing intermediate container 4f7cace0d462
-Step 4 : ENV JAVA_HOME /jdk1.7.0_80
- ---> Running in 847a340050fc
- ---> 8be4cc036cf0
-Removing intermediate container 847a340050fc
-Step 5 : ENV PATH $JAVA_HOME/bin:$PATH
- ---> Running in 5e4768922522
- ---> 2939d5101491
-Removing intermediate container 5e4768922522
-Step 6 : ENV CLASSPATH .:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
- ---> Running in 5a9983dc79a3
- ---> 20bb50257f95
-Removing intermediate container 5a9983dc79a3
-Step 7 : EXPOSE 8006
- ---> Running in 66a79b447612
- ---> 924233cb685d
-Removing intermediate container 66a79b447612
-Step 8 : ENTRYPOINT java -jar /app.jar
- ---> Running in 835bdc4c5534
- ---> 0b2d8a764d0f
-Removing intermediate container 835bdc4c5534
-Successfully built 0b2d8a764d0f
+ ---> 36540f359ca3
+Step 2/9 : MAINTAINER zhy
+ ---> Running in 7ab3059fadb9
+ ---> 07ddd5c692c6
+Removing intermediate container 7ab3059fadb9
+Step 3/9 : COPY jdk1.8.0_131 jdk1.8.0_131
+ ---> ca598ce2f33e
+Removing intermediate container 4cd5aecd4d14
+Step 4/9 : ADD mythreejs-0.0.1-SNAPSHOT.jar app.jar
+ ---> 27fc14f4e66d
+Removing intermediate container bc20eaa60874
+Step 5/9 : ENV JAVA_HOME /jdk1.8.0_131
+ ---> Running in c697dd4bb0d6
+ ---> 934ee86cc206
+Removing intermediate container c697dd4bb0d6
+Step 6/9 : ENV PATH $JAVA_HOME/bin:$PATH
+ ---> Running in 5cb645b755c1
+ ---> a24f7da50e1c
+Removing intermediate container 5cb645b755c1
+Step 7/9 : ENV CLASSPATH .:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+ ---> Running in 2f84dad055d2
+ ---> 597e33b0a6bd
+Removing intermediate container 2f84dad055d2
+Step 8/9 : EXPOSE 8006
+ ---> Running in 122e958ea133
+ ---> e3f9dae84bb6
+Removing intermediate container 122e958ea133
+Step 9/9 : ENTRYPOINT java -jar /app.jar
+ ---> Running in 8525048e3c1d
+ ---> 7203b8160f0a
+Removing intermediate container 8525048e3c1d
+Successfully built 7203b8160f0a
 
 5.查看生成的镜像
 # docker images
