@@ -2,17 +2,29 @@
 # mkdir /usr/local/docker
 # cd /usr/local/docker
 # mkdir workspace
-
-2.创建Dockerfile
 # cd workspace
+
+2.准备jdk、jar项目
+# ls
+jdk1.7.0_80  mythreejs-0.0.1-SNAPSHOT.jar
+
+3.创建Dockerfile
 # vi Dockerfile
 FROM centos
+
 MAINTAINER zhy
+
+COPY jdk1.7.0_80 jdk1.7.0_80
 ADD mythreejs-0.0.1-SNAPSHOT.jar app.jar
+
+ENV JAVA_HOME=/jdk1.7.0_80
+ENV PATH=$JAVA_HOME/bin:$PATH
+ENV CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+
 EXPOSE 8006
 ENTRYPOINT ["java","-jar","/app.jar"]
 
-3.编译并生成镜像 （. 表示当前路径） 
+4.编译并生成镜像 （. 表示当前路径） 
 # docker build -t zhy/threejs .
 Sending build context to Docker daemon  27.9 MB
 Sending build context to Docker daemon 
@@ -41,12 +53,12 @@ Step 4 : ENTRYPOINT java -jar /app.jar
 Removing intermediate container 89fabb491308
 Successfully built 04565f4995f8
 
-4.查看生成的镜像
+5.查看生成的镜像
 # docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 zhy/threejs         latest              04565f4995f8        56 seconds ago      220.4 MB
 centos              latest              72a210db1424        30 hours ago        192.5 MB
 hello-world         latest              f054dc87ed76        3 weeks ago         1.84 kB
 
-5.创建容器并运行
+6.创建容器并运行
 # docker run -p 8006:8006 --name threejs zhy/threejs
