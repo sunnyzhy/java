@@ -6,7 +6,7 @@
 
 2.准备jdk、jar项目
 # ls
-jdk1.7.0_80  mythreejs-0.0.1-SNAPSHOT.jar
+jdk1.8.0_131  mythreejs-0.0.1-SNAPSHOT.jar
 
 3.创建Dockerfile
 # vi Dockerfile
@@ -14,19 +14,22 @@ FROM centos
 
 MAINTAINER zhy
 
-COPY jdk1.7.0_80 jdk1.7.0_80
+COPY jdk1.8.0_131 jdk1.8.0_131
 ADD mythreejs-0.0.1-SNAPSHOT.jar app.jar
 
-ENV JAVA_HOME=/jdk1.7.0_80
+ENV JAVA_HOME=/jdk1.8.0_131
 ENV PATH=$JAVA_HOME/bin:$PATH
 ENV CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
 EXPOSE 8006
 ENTRYPOINT ["java","-jar","/app.jar"]
 
-4.编译并生成镜像 （. 表示当前路径） 
+# ls
+Dockerfile  jdk1.8.0_131  mythreejs-0.0.1-SNAPSHOT.jar
+
+4.编译并生成镜像 （. 表示当前路径）
 # docker build -t zhy/threejs .
-Sending build context to Docker daemon  27.9 MB
+Sending build context to Docker daemon  335.8 MB
 Sending build context to Docker daemon 
 Step 0 : FROM centos
 latest: Pulling from centos
@@ -40,18 +43,33 @@ Step 1 : MAINTAINER zhy
  ---> Running in 193844b9a75f
  ---> e439d94b1afe
 Removing intermediate container 193844b9a75f
-Step 2 : ADD mythreejs-0.0.1-SNAPSHOT.jar app.jar
- ---> 5487e12e2a9d
-Removing intermediate container 9247a70f1810
-Step 3 : EXPOSE 8006
- ---> Running in 54823002dea2
- ---> 6ff13f037be3
-Removing intermediate container 54823002dea2
-Step 4 : ENTRYPOINT java -jar /app.jar
- ---> Running in 89fabb491308
- ---> 04565f4995f8
-Removing intermediate container 89fabb491308
-Successfully built 04565f4995f8
+Step 2 : COPY jdk1.7.0_80 jdk1.7.0_80
+ ---> 026a9817a7c7
+Removing intermediate container 2172dc4eac9e
+Step 3 : ADD mythreejs-0.0.1-SNAPSHOT.jar app.jar
+ ---> 6dddd6de7916
+Removing intermediate container 4f7cace0d462
+Step 4 : ENV JAVA_HOME /jdk1.7.0_80
+ ---> Running in 847a340050fc
+ ---> 8be4cc036cf0
+Removing intermediate container 847a340050fc
+Step 5 : ENV PATH $JAVA_HOME/bin:$PATH
+ ---> Running in 5e4768922522
+ ---> 2939d5101491
+Removing intermediate container 5e4768922522
+Step 6 : ENV CLASSPATH .:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+ ---> Running in 5a9983dc79a3
+ ---> 20bb50257f95
+Removing intermediate container 5a9983dc79a3
+Step 7 : EXPOSE 8006
+ ---> Running in 66a79b447612
+ ---> 924233cb685d
+Removing intermediate container 66a79b447612
+Step 8 : ENTRYPOINT java -jar /app.jar
+ ---> Running in 835bdc4c5534
+ ---> 0b2d8a764d0f
+Removing intermediate container 835bdc4c5534
+Successfully built 0b2d8a764d0f
 
 5.查看生成的镜像
 # docker images
@@ -62,3 +80,36 @@ hello-world         latest              f054dc87ed76        3 weeks ago         
 
 6.创建容器并运行
 # docker run -p 8006:8006 --name threejs zhy/threejs
+
+补充，删除镜像的时候，要先删容器，再删镜像：
+1.删除容器docker rm <container id>
+# docker ps -a
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                    PORTS               NAMES
+09717705d01e        zhy/threejs         "java -jar /app.jar"   22 minutes ago                                                    threejs             
+02f9d9659edb        hello-world         "/hello"               18 hours ago        Exited (0) 18 hours ago                       stupefied_lalande   
+cca7267c1f2a        hello-world         "/hello"               18 hours ago        Exited (0) 18 hours ago                       focused_babbage     
+
+# docker rm 09717705d01e
+09717705d01e
+
+2.删除镜像docker rmi <image id>
+# docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+zhy/threejs         latest              0b2d8a764d0f        56 seconds ago      220.4 MB
+centos              latest              72a210db1424        30 hours ago        192.5 MB
+hello-world         latest              f054dc87ed76        3 weeks ago         1.84 kB
+
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                    PORTS               NAMES
+09717705d01e        zhy/threejs         "java -jar /app.jar"   22 minutes ago                                                    threejs             
+02f9d9659edb        hello-world         "/hello"               18 hours ago        Exited (0) 18 hours ago                       stupefied_lalande   
+cca7267c1f2a        hello-world         "/hello"               18 hours ago        Exited (0) 18 hours ago                       focused_babbage     
+
+# docker rmi 0b2d8a764d0f
+Untagged: zhy/threejs:latest
+Deleted: 0b2d8a764d0f40acd61e8c35071f98968eaaa315f6c84884dd4e9f2a07073b7f
+Deleted: 924233cb685d7d9b1ddb0f2af23ac000be7c1f85df0c9d7bb5682464b763e281
+Deleted: 20bb50257f957545ec8304cb233391d4179cbf56c1578192ec17965acfd66115
+Deleted: 2939d5101491e4558d3b804d556ec45cd81be434aa8b1a201a49bc5c26cb8dfc
+Deleted: 8be4cc036cf0198831599871a9ce7976636e4517d0f585e6352a2be162bf7c3f
+Deleted: 6dddd6de79166d8235ed01a25b40cab615b3d31493050d335f0e6d15861490a3
+Deleted: 026a9817a7c787427e1ff7efc192e70453068c437b1d5bf60a0c037625bd1578
