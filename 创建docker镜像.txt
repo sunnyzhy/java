@@ -132,11 +132,6 @@ zhy/threejs         latest              0b2d8a764d0f        56 seconds ago      
 centos              latest              72a210db1424        30 hours ago        192.5 MB
 hello-world         latest              f054dc87ed76        3 weeks ago         1.84 kB
 
-CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                    PORTS               NAMES
-09717705d01e        zhy/threejs         "java -jar /app.jar"   22 minutes ago                                                    threejs             
-02f9d9659edb        hello-world         "/hello"               18 hours ago        Exited (0) 18 hours ago                       stupefied_lalande   
-cca7267c1f2a        hello-world         "/hello"               18 hours ago        Exited (0) 18 hours ago                       focused_babbage     
-
 # docker rmi 0b2d8a764d0f
 Untagged: zhy/threejs:latest
 Deleted: 0b2d8a764d0f40acd61e8c35071f98968eaaa315f6c84884dd4e9f2a07073b7f
