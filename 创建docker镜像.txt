@@ -1,0 +1,52 @@
+1.创建docker的workspace目录
+# mkdir /usr/local/docker
+# cd /usr/local/docker
+# mkdir workspace
+
+2.创建Dockerfile
+# cd workspace
+# vi Dockerfile
+FROM centos
+MAINTAINER zhy
+ADD mythreejs-0.0.1-SNAPSHOT.jar app.jar
+EXPOSE 8006
+ENTRYPOINT ["java","-jar","/app.jar"]
+
+3.编译并生成镜像 （. 表示当前路径） 
+# docker build -t zhy/threejs .
+Sending build context to Docker daemon  27.9 MB
+Sending build context to Docker daemon 
+Step 0 : FROM centos
+latest: Pulling from centos
+f19a7b85bfcf: Pull complete 
+98eeaaddf5eb: Pull complete 
+72a210db1424: Pull complete 
+Digest: sha256:ddc45b5bc704ebe06a30eae3b50027d163243088d2478d50516ebede8c831b4f
+Status: Downloaded newer image for centos:latest
+ ---> 72a210db1424
+Step 1 : MAINTAINER zhy
+ ---> Running in 193844b9a75f
+ ---> e439d94b1afe
+Removing intermediate container 193844b9a75f
+Step 2 : ADD mythreejs-0.0.1-SNAPSHOT.jar app.jar
+ ---> 5487e12e2a9d
+Removing intermediate container 9247a70f1810
+Step 3 : EXPOSE 8006
+ ---> Running in 54823002dea2
+ ---> 6ff13f037be3
+Removing intermediate container 54823002dea2
+Step 4 : ENTRYPOINT java -jar /app.jar
+ ---> Running in 89fabb491308
+ ---> 04565f4995f8
+Removing intermediate container 89fabb491308
+Successfully built 04565f4995f8
+
+4.查看生成的镜像
+# docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+zhy/threejs         latest              04565f4995f8        56 seconds ago      220.4 MB
+centos              latest              72a210db1424        30 hours ago        192.5 MB
+hello-world         latest              f054dc87ed76        3 weeks ago         1.84 kB
+
+5.创建容器并运行
+#docker run -p 192.168.0.105:8080:8080 --name websocket  yaolin/websocket
