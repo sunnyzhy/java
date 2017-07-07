@@ -79,6 +79,7 @@ centos              latest              72a210db1424        30 hours ago        
 hello-world         latest              f054dc87ed76        3 weeks ago         1.84 kB
 
 6.创建容器并运行
+1).run方式启动
 # docker run -p 8006:8006 --name threejs zhy/threejs
 
   .   ____          _            __ _ _
@@ -113,6 +114,9 @@ hello-world         latest              f054dc87ed76        3 weeks ago         
 2017-07-07 05:00:33.378  INFO 1 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8006 (http)
 2017-07-07 05:00:33.389  INFO 1 --- [           main] com.zhy.threejs.MyThreejsApplication     : Started MyThreejsApplication in 7.146 seconds (JVM running for 8.012)
 
+2).start方式启动
+# docker start threejs
+threejs
 
 补充，删除镜像的时候，要先删容器，再删镜像：
 1.删除容器docker rm <container id>
