@@ -108,3 +108,10 @@ Or adding a space:
 16.The content of element type "web-app" must match "(icon?,display-name?,description?,distributable?,context-param*,filter*,filter-mapping*,listener*,servlet*,servlet- mapping*,session-config?,mime-mapping*,welcome-file-list?,error-page*,taglib*,resource-env-ref*,resource-ref*,security-constraint*,login-config?,security-role*,env-entry*,ejb-ref*,ejb-local-ref*)".
 解决方法：
 在Web.xml中<web-app>标签的元素个数和排序规则是有限制的，大多数情况下出现该错误的原因是元素排放顺序有误，按照上面的描述将各元素排序即可。
+
+17.java.io.FileNotFoundException: class path resource [beans.xml] cannot be opened because it does not exit.
+解决方法：
+用maven创建的项目，必须把spring的配置文件beans.xml或者applicationContext.xml放到系统根目录下，maven项目的系统根目录默认是src/main/java和src/main/resources，而不是src，所以beans.xml文件必须放到src/main/java和src/main/resources下面的文件夹或者包中，在加载的时候这样写：
+ApplicationContext applicationContext=new ClassPathXmlApplicationContext("beans.xml"); 
+如果beans.xml不是直接放到了src/main/java和src/main/resources路径下，而是放在了src/main/java/conf路径下，那么加载时候要这样写：
+ApplicationContext applicationContext=new ClassPathXmlApplicationContext("conf/beans.xml");  
