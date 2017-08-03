@@ -119,3 +119,7 @@ ApplicationContext applicationContext=new ClassPathXmlApplicationContext("conf/b
 18.JSP EL表达式取不到值
 解决方法：
 <%@ page isELIgnored="false" %>
+
+19.创建maven项目报错
+解决方法：
+右键maven工程 -> Maven -> Update Project... -> 勾选Force Update
