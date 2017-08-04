@@ -123,3 +123,10 @@ ApplicationContext applicationContext=new ClassPathXmlApplicationContext("conf/b
 19.创建maven项目报错
 解决方法：
 右键maven工程 -> Maven -> Update Project... -> 勾选Force Update
+
+20.slf4j报错
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+解决方法：
+一般只是在程序中引入了slf4j-api-xxx.jar文件，还需引入slf4j-nop-xxx.jar
