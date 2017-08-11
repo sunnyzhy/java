@@ -130,3 +130,7 @@ SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 解决方法：
 一般只是在程序中引入了slf4j-api-xxx.jar文件，还需引入slf4j-nop-xxx.jar
+
+21.连接mysql报错java.sql.SQLNonTransientConnectionException: CLIENT_PLUGIN_AUTH is required
+解决方法：
+把mysql的jar包修改为mysql-connector-java-5.x.jar版本
