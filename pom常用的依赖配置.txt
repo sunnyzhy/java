@@ -108,7 +108,13 @@ slf4j+logback依赖：
 <dependency>
     <groupId>ch.qos.logback</groupId>
     <artifactId>logback-classic</artifactId>
-    <scope>test</scope>
+        <exclusions>  
+            <exclusion>  
+                <artifactId>slf4j-api</artifactId>  
+                <groupId>org.slf4j</groupId>  
+            </exclusion>  
+        </exclusions> 
+    <scope>provided</scope>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
