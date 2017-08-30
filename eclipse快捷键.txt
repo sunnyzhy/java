@@ -1,7 +1,11 @@
-alt + / ctrl + shift + o：导入所有没导入的包
+ctrl + shift + o 导入所有没导入的包
 
-shitf + ctrl + m：导入你鼠标当前所在的地方的未导入的包
+ctrl + shitf + m 导入你鼠标当前所在的地方的未导入的包
 
-ctrl + /：注释/取消注释
+ctrl + / 注释/取消注释
 
-alt + /：自动填充代码或提示接口方法
+alt + / 自动填充代码或提示接口方法
+
+ctrl + shift + x 转为大写 
+ 
+ctrl + shift + y 转为小写
