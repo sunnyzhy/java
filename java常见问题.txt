@@ -134,3 +134,16 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 21.连接mysql报错java.sql.SQLNonTransientConnectionException: CLIENT_PLUGIN_AUTH is required
 解决方法：
 把mysql的jar包修改为mysql-connector-java-5.x.jar版本
+
+22.Jackson反序列化问题
+public class Outer {
+    public class Inner {
+        public int getX() { return 5;
+    }
+}    
+内部类可以被序列化，但不可以被反序列化；如果要序列化只能使用静态内部类。
+public class Outer {
+    public static class Inner {
+        public int getX() { return 5;
+    }
+}    
