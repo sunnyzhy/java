@@ -147,3 +147,8 @@ public class Outer {
         public int getX() { return 5;
     }
 }    
+
+23.According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by de
+解决方法：
+MySQL在高版本需要指明是否进行SSL连接
+在mysql连接字符串url中加入ssl=true或者false即可，url=jdbc:mysql://127.0.0.1:3306/dbname?characterEncoding=utf8&useSSL=true
