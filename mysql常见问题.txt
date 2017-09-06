@@ -1,0 +1,7 @@
+1. 1055 this is incompatible with sql_mode=only_full_group_by
+临时解决方法，执行以下sql语句，关闭ONLY_FULL_GROUP_BY：
+set @@GLOBAL.sql_mode='';
+set sql_mode ='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+
+彻底解决方法，修改my.ini 配置（如果没有这个文件，就把my-default.ini 改成my.ini），在[mysqld]和[mysql]下添加以下内容：
+SET sql_mode ='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
