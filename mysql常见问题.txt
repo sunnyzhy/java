@@ -5,3 +5,7 @@ set sql_mode ='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISI
 
 彻底解决方法，修改my.ini 配置（如果没有这个文件，就把my-default.ini 改成my.ini），在[mysqld]和[mysql]下添加以下内容：
 SET sql_mode ='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+
+2.mysql存储毫秒
+mysql5.6.4以后的版本，支持定义time(3)或者timestamp(6)这样的字段，然后使用 current_timestamp(3) 或者 current_timestamp(6) 即可以为该字段赋值带有毫秒或微秒值的时间数据了！
+`update_time` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6)
