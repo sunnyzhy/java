@@ -152,3 +152,25 @@ public class Outer {
 解决方法：
 MySQL在高版本需要指明是否进行SSL连接
 在mysql连接字符串url中加入ssl=true或者false即可，url=jdbc:mysql://127.0.0.1:3306/dbname?characterEncoding=utf8&useSSL=true
+
+24.jackson实体转json时，为NULL或者""的属性不参加序列化
+1).实体上
+@JsonInclude(Include.NON_NULL) 
+
+//将该标记放在属性上，如果该属性为NULL则不参与序列化 
+//如果放在类上边,那对这个类的全部属性起作用 
+//Include.Include.ALWAYS 默认 
+//Include.NON_DEFAULT 属性为默认值不序列化 
+//Include.NON_EMPTY 属性为 空（“”） 或者为 NULL 都不序列化 
+//Include.NON_NULL 属性为NULL 不序列化 
+
+
+2).代码上
+ObjectMapper mapper = new ObjectMapper();
+mapper.setSerializationInclusion(Include.NON_NULL);  
+
+//通过该方法对mapper对象进行设置，所有序列化的对象都将按改规则进行系列化 
+//Include.Include.ALWAYS 默认 
+//Include.NON_DEFAULT 属性为默认值不序列化 
+//Include.NON_EMPTY 属性为 空（“”） 或者为 NULL 都不序列化 
+//Include.NON_NULL 属性为NULL 不序列化 
