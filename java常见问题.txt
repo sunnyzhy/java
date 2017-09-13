@@ -247,7 +247,8 @@ public class Test {
       }
     String responseString = "";
     try{
-        responseString = mockMvc.perform(                   post("/url").contentType(MediaType.APPLICATION_JSON_UTF8).content(requestJson)).andDo(print())
+        responseString = mockMvc.perform(
+        post("/url").contentType(MediaType.APPLICATION_JSON_UTF8).content(requestJson)).andDo(print())
                 .andExpect(status().isOk()).andReturn().getResponse().getContentAsString();
       } catch(Exception e){
         e.printStackTrace();
