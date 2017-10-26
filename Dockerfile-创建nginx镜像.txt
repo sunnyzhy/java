@@ -1,0 +1,7 @@
+FROM docker.io/nginx
+
+MAINTAINER zhy
+
+COPY <src dir> /usr/share/nginx/html/<dst dir>
+
+EXPOSE 80
