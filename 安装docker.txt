@@ -2,11 +2,9 @@
 # yum install -y docker
 
 2.启动docker
-# service docker start
-Redirecting to /bin/systemctl start  docker.service
+# systemctl start docker
 
-# service docker stop
-Redirecting to /bin/systemctl stop  docker.service
+# systemctl stop docker
 
 3.验证docker是否安装成功
 # docker -v
