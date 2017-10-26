@@ -48,3 +48,11 @@ e3c5b66e8fa6        hello-world          "/hello"                 18 hours ago  
 # docker images
 REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
 docker.io/hello-world   latest              05a3bd381fc2        6 weeks ago         1.84 kB
+
+6.配置阿里云镜像，需要先注册阿里云的开发者账号https://dev.aliyun.com/search.html，然后记下加速器地址
+# vim /etc/docker/daemon.json
+{
+  "registry-mirrors": ["https://6848w7y3.mirror.aliyuncs.com"]
+}
+# systemctl daemon-reload
+# systemctl restart docker
