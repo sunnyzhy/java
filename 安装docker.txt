@@ -54,3 +54,13 @@ docker.io/hello-world   latest              05a3bd381fc2        6 weeks ago     
 }
 # systemctl daemon-reload
 # systemctl restart docker
+
+7.进入镜像系统
+# docker exec -it <container id> /bin/sh
+然后就可以使用linux命令了
+
+8.从主机拷贝文件或文件夹到容器
+# docker cp <src> <container id>:<dst>
+
+9.从容器拷贝文件或文件夹到主机
+# docker cp <container id>:<src> <dst>
