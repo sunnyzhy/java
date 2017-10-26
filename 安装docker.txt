@@ -1,35 +1,16 @@
-1.更新系统
-# yum -y update
+1.安装docker
+# yum install -y docker
 
-2.创建docker的yum仓库
-# cat > /etc/yum.repos.d/docker.repo << EOF
-[dockerrepo]
-name=Docker Repository
-#baseurl=https://yum.dockerproject.org/repo/main/centos/7 # centos7
-baseurl=https://yum.dockerproject.org/repo/main/centos/6 # centos6
-enabled=1
-gpgcheck=1
-gpgkey=https://yum.dockerproject.org/gpg
-EOF
-
-注意：
-如果安装过程中报错docker-engine-17.05.0.ce-1.el7.centos.x86_64 (dockerrepo)，则很有可能是baseurl设置错误，检查url里的版本号是否跟操作系统的版本号一致
-修改完成之后，清除yum缓存
-# yum clean all
-# yum makecache
-
-3.安装docker
-# yum install -y docker-engine
-
-4.启动docker
+2.启动docker
 # service docker start
-Starting docker:	                                   [  OK  ]
+Redirecting to /bin/systemctl start  docker.service
 
 # service docker stop
+Redirecting to /bin/systemctl stop  docker.service
 
-5.验证docker是否安装成功
-# docker --version
-Docker version 1.7.1, build 786b29d
+3.验证docker是否安装成功
+# docker -v
+Docker version 1.12.6, build 85d7426/1.12.6
 
 # docker run hello-world
 
@@ -53,17 +34,12 @@ Share images, automate workflows, and more with a free Docker ID:
 For more examples and ideas, visit:
  https://docs.docker.com/engine/userguide/
 
-6.查看本地的镜像
+4.查看本地的容器
+# docker ps -a
+CONTAINER ID        IMAGE                COMMAND                  CREATED             STATUS                     PORTS               NAMES
+e3c5b66e8fa6        hello-world          "/hello"                 18 hours ago        Exited (0) 18 hours ago                        big_leakey
+
+5.查看本地的镜像
 # docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-hello-world         latest              f054dc87ed76        3 weeks ago         1.84 kB
-
-7.错误
-COMMAND_FAILED: '/sbin/iptables -t nat -A DOCKER -p tcp -d 0/0 --dport 8111 -j DNAT --to-destination 172.17.0.6:8111 ! -i docker0' failed: iptables: No chain/target/match by that name.
-
-# pkill docker
-# iptables -t nat -F
-# ifconfig docker0 down
-# brctl delbr docker0
-
-重启docker
+REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
+docker.io/hello-world   latest              05a3bd381fc2        6 weeks ago         1.84 kB
