@@ -13,6 +13,11 @@ Redirecting to /bin/systemctl stop  docker.service
 Docker version 1.12.6, build 85d7426/1.12.6
 
 # docker run hello-world
+Unable to find image 'hello-world:latest' locally
+Trying to pull repository docker.io/library/hello-world ... 
+latest: Pulling from docker.io/library/hello-world
+5b0f327be733: Pull complete 
+Digest: sha256:07d5f7800dfe37b8c2196c7b1c524c33808ce2e0f74e7aa00e603295ca9a0972
 
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
