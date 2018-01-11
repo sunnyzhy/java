@@ -1,4 +1,4 @@
-# java -Xms512m -Xmx512m -XX:MaxPermSize=256m -jar xxx.jar
+# java -Xms512m -Xmx512m -XX:MaxPermSize=256m -jar xxx.jar --server.port=xxxx
 ```
 -Xms<size> 设置java堆大小的初始值
 
