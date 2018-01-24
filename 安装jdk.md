@@ -24,17 +24,15 @@ copy-jdk-configs-2.2-3.el7.noarch
 
 # 安装
 ```
-# cd /usr/local
+# cd /usr/local/jdk
 
 # tar -zxvf jdk-8u151-linux-x64.tar.gz
-
-# mv jdk1.8.0_151 jdk
 ```
 
 # 配置环境变量
 ```
 # vim /etc/profile
-export JAVA_HOME=/usr/local/jdk
+export JAVA_HOME=/usr/local/jdk/jdk1.8.0_151
 export CLASSPATH=$JAVA_HOME/jre/lib:$JAVA_HOME/lib
 export PATH=$PATH:$JAVA_HOME/bin
 
