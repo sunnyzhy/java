@@ -15,3 +15,12 @@ MAT工具的下载地址为：http://www.eclipse.org/mat/downloads.php
 2. 通过Dominator Tree分析
 
 3. 通过Histogram分析
+
+# vm参数
+- -Xms，设置堆的最小值
+
+- -Xmx，设置堆的最大值，**将堆的最小值-Xms参数与最大值-Xmx参数设置为一样，即可避免堆自动扩展**
+
+- -XX:+HeapDumpOnOutOfMemoryError，虚拟机在出现内存溢出异常时，dump出当前的内存堆转储快照以便分析
+
+- -Xss，设置栈的内存容量
