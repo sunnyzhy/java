@@ -321,13 +321,21 @@ GC日志第一行，ParNew表示使用的新生代收集器为Parallel收集器�
 
 ## 5.3 GC日志相关
 
+-XX:+printGC
+
+表示打印GC的简要信息。
+
+- -verbose:gc
+
+表示打印GC的简要信息。同-XX:+printGC。
+
 - -XX:+PrintGCDetails
 
-表示输出GC的详细情况。
+表示打印GC的详细信息。
 
 - -XX:+PrintGCDateStamps
 
-指定输出GC时的时间格式，比指定-XX:+PrintGCTimeStamps可读性更高。
+指定信息GC时的时间格式，比指定-XX:+PrintGCTimeStamps可读性更高。
 
 - -Xloggc
 
