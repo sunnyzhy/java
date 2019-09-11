@@ -15,15 +15,28 @@ BlockingQueue 具有 4 组不同的方法用于插入、移除以及对队列中
 
 |操作|抛异常|特定值|阻塞|超时|
 |--|--|--|--|--|
-|插入|add(o)|offer(o)|put(o)|offer(o, timeout, timeunit)|
-|移除|remove(o)|poll(o)|take(o)|poll(timeout, timeunit)|
-|检查|element(o)|peek(o)|不可用|不可用|
+|添加|add(e)|offer(e)|put(e)|offer(e, timeout, timeunit)|
+|移除|remove()|poll()|take()|poll(timeout, timeunit)|
+|检查|element()|peek()|不可用|不可用|
 
 四组不同的行为方式解释：
 - 抛异常：如果试图的操作无法立即执行，抛一个异常。
 - 特定值：如果试图的操作无法立即执行，返回一个特定的值(常常是 true / false)。
 - 阻塞：如果试图的操作无法立即执行，该方法调用将会发生阻塞，直到能够执行。
 - 超时：如果试图的操作无法立即执行，该方法调用将会发生阻塞，直到能够执行，但等待时间不会超过给定值。返回一个特定值以告知该操作是否成功(典型的是 true / false)。
+
+## drainto(collection c, int maxelements)
+批量获取队列里的元素，不阻塞，如果要实现阻塞功能，就需要变通地借助 take：
+```java
+BlockingQueue<String> queue = new LinkedBlockingQueue<>();
+queue.put("a");
+queue.put("b");
+queue.put("c");
+List<String> list = new ArrayList<>();
+String one = queue.take();
+list.add(one);
+queue.drainTo(list, 1000);
+```
 
 无法向一个 BlockingQueue 中插入 null。如果你试图插入 null，BlockingQueue 将会抛出一个 NullPointerException。 
 可以访问到 BlockingQueue 中的所有元素，而不仅仅是开始和结束的元素。比如说，你将一个对象放入队列之中以等待处理，但你的应用想要将其取消掉。那么你可以调用诸如 remove(o) 方法来将队列之中的特定对象进行移除。但是这么干效率并不高(译者注：基于队列的数据结构，获取除开始或结束位置的其他对象的效率不会太高)，因此你尽量不要用这一类的方法，除非你确实不得不那么做。
