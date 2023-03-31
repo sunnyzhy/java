@@ -91,7 +91,7 @@ where possible options include:
 
 ### 官网
 
-[AdoptOpenJdk](https://adoptium.net/ 'AdoptOpenJdk')
+[Adopt Open Jdk](https://adoptium.net/ 'Adopt Open Jdk')
 
 ### 安装
 
