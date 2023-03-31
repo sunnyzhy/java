@@ -1,8 +1,14 @@
-# 官网
-http://www.oracle.com/technetwork/java/javase/downloads/index.html
+# 安装 jdk
 
-# 卸载自带的OpenJdk
-```
+## 安装 Oracle Jdk
+
+### 官网
+
+[Oracle Jdk](https://www.oracle.com/java/technologies/downloads 'Oracle Jdk')
+
+### 卸载自带的 OpenJdk
+
+```bash
 # rpm -qa | grep java
 python-javapackages-3.4.1-11.el7.noarch
 tzdata-java-2017c-1.el7.noarch
@@ -22,15 +28,17 @@ copy-jdk-configs-2.2-3.el7.noarch
 # yum -y remove java-1.7.0-openjdk-headless java-1.8.0-openjdk-headless java-1.7.0-openjdk java-1.8.0-openjdk
 ```
 
-# 安装
-```
+### 安装
+
+```bash
 # cd /usr/local/jdk
 
 # tar -zxvf jdk-8u151-linux-x64.tar.gz
 ```
 
-# 配置环境变量
-```
+### 配置环境变量
+
+```bash
 # vim /etc/profile
 export JAVA_HOME=/usr/local/jdk/jdk1.8.0_151
 export CLASSPATH=$JAVA_HOME/jre/lib:$JAVA_HOME/lib
@@ -78,3 +86,13 @@ where possible options include:
   -Werror                    Terminate compilation if warnings occur
   @<filename>                Read options and filenames from file
 ```
+
+## 安装 Open Jdk
+
+### 官网
+
+[AdoptOpenJdk](https://adoptium.net/ 'AdoptOpenJdk')
+
+### 安装
+
+安装流程同上。
